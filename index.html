@@ -1,34 +1,616 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Simple</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <h1>Selamat Datang di Website Simple</h1>
-        <p>Ini contoh website sederhana dengan HTML, CSS, dan JS</p>
-    </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Girlfriend Day Zaza 💖</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Poppins:wght@300;400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* --- CSS FINAL: TEMA GENSHIN X HOGWARTS V4 (MAGIC & ELEGANCE) --- */
 
-    <main>
-        <section id="about">
-            <h2>Tentang Website Ini</h2>
-            <p>Website ini dibuat untuk contoh dan latihan membuat halaman web sederhana.</p>
-        </section>
+      :root {
+        --color-primary: #ffc72c; /* Emas Hogwarts */
+        --color-secondary: #000033; /* Biru Tua Malam */
+        --color-background-dark: #00000a;
+        --color-text-light: #f0f8ff;
+        --color-glow-gold: rgba(255, 220, 100, 1);
+        --color-glow-magic: rgba(30, 144, 255, 0.7); /* Biru Ajaib */
+      }
 
-        <section id="action">
-            <h2>Aksi</h2>
-            <button id="clickBtn">Klik Aku!</button>
-            <p id="message"></p>
-        </section>
-    </main>
+      html {
+        scroll-behavior: smooth;
+      }
 
-    <footer>
-        <p>&copy; 2025 Website Simple. Semua hak cipta dilindungi.</p>
-    </footer>
+      /* BACKGROUND LAYER 1: Deep Magic Night */
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+        overflow-x: hidden;
+        background: var(--color-background-dark);
+        color: var(--color-text-light);
+        min-height: 450vh;
+        position: relative;
+        background-image: linear-gradient(135deg, #020010 0%, #000033 100%);
+      }
 
-    <script src="script.js"></script>
-</body>
+      /* BACKGROUND LAYER 2: Animated Stars/Magic Dust */
+      body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background-image: radial-gradient(
+            var(--color-glow-gold) 1px,
+            transparent 30px
+          ),
+          radial-gradient(var(--color-glow-magic) 0.5px, transparent 20px);
+        background-size: 300px 300px, 150px 150px;
+        animation: starScroll 120s linear infinite;
+        opacity: 0.6;
+      }
+
+      @keyframes starScroll {
+        from {
+          background-position: 0 0, 40px 60px;
+        }
+        to {
+          background-position: 300px 300px, 150px 150px;
+        }
+      }
+
+      /* Panel Dasar */
+      .panel {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 50px 20px;
+        flex-direction: column;
+        position: relative;
+        z-index: 2;
+        background-attachment: fixed;
+      }
+
+      /* JUDUL GENSIN X HOGWARTS */
+      .panel h1 {
+        font-family: 'Cinzel', serif;
+        font-size: 5rem;
+        color: var(--color-primary);
+        margin-bottom: 25px;
+        text-shadow: 0 0 30px var(--color-glow-gold),
+          0 0 10px rgba(255, 255, 255, 1);
+        font-weight: 900;
+        line-height: 1.1;
+        letter-spacing: 3px;
+        animation: titleGlow 2.5s infinite alternate;
+        background: linear-gradient(180deg, #fff 30%, var(--color-primary) 70%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .panel h2 {
+        font-family: 'Cinzel', serif;
+        font-size: 3.2rem;
+        color: #a0c4ff;
+        margin-bottom: 20px;
+        text-shadow: 0 0 15px var(--color-glow-magic),
+          0 0 5px rgba(255, 255, 255, 0.5);
+        font-weight: 700;
+      }
+      .panel p {
+        font-size: 1.5rem;
+        line-height: 1.8;
+        margin: 10px auto 40px;
+        color: var(--color-text-light);
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+        max-width: 750px;
+      }
+      .panel#panel1 p {
+        font-family: 'Poppins', sans-serif;
+        font-size: 2rem;
+        font-style: italic;
+        font-weight: 700;
+        line-height: 1.6;
+        color: #ffcccc;
+        text-shadow: 0 0 20px rgba(255, 150, 200, 1),
+          0 0 8px rgba(255, 255, 255, 0.8);
+      }
+
+      /* Tombol Puzzle */
+      .buttons {
+        margin-top: 60px;
+        position: relative;
+        width: 550px;
+        height: 100px;
+      }
+      button {
+        padding: 20px 50px;
+        font-size: 1.4rem;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        position: absolute;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+      #yesBtn {
+        background: linear-gradient(90deg, #ffd700, #ff8c00);
+        color: var(--color-secondary);
+        left: 50%;
+        transform: translateX(-50%);
+        box-shadow: 0 0 30px var(--color-glow-gold), 0 0 10px #fff;
+        z-index: 10;
+        border: 3px solid #fff;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+      #yesBtn:hover {
+        transform: translateX(-50%) scale(1.1);
+        box-shadow: 0 0 50px var(--color-glow-gold), 0 0 20px #fff;
+      }
+      #noBtn {
+        background: linear-gradient(90deg, #800000, #ff6347);
+        color: #fff;
+        left: 10%;
+        top: 0;
+        transition: all 0.05s linear; /* Transisi super cepat */
+        z-index: 5;
+        box-shadow: 0 0 20px rgba(255, 99, 71, 0.8);
+      }
+      .message-box {
+        margin-top: 50px;
+        padding: 30px 60px;
+        background: rgba(255, 50, 50, 0.1);
+        border-radius: 25px;
+        backdrop-filter: blur(20px);
+        box-shadow: 0 0 30px rgba(255, 50, 50, 1),
+          inset 0 0 15px rgba(255, 150, 150, 0.7);
+        display: none;
+        font-weight: 800;
+        color: #ff9999;
+        border: 2px solid #ff3333;
+      }
+
+      /* Memory Panels (ARTIFACT CARD & Wizard Frame) */
+      .memory-panel-container {
+        width: 100%;
+        max-width: 1100px;
+        margin: 120px auto;
+        padding: 30px;
+        z-index: 1;
+      }
+      .memory-panel {
+        min-height: 80vh;
+        background: rgba(0, 0, 50, 0.9);
+        margin: 100px 0;
+        border-radius: 30px;
+        padding: 60px;
+        box-shadow: 0 0 80px rgba(0, 0, 0, 1);
+        opacity: 0;
+        transform: translateY(200px) scale(0.9);
+        transition: all 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        backdrop-filter: blur(20px);
+        border: 3px solid var(--color-primary);
+        position: relative;
+      }
+      .memory-panel::before {
+        content: '';
+        position: absolute;
+        top: -5px;
+        left: -5px;
+        right: -5px;
+        bottom: -5px;
+        border: 5px solid rgba(30, 144, 255, 0.3);
+        border-radius: 35px;
+        pointer-events: none;
+      }
+      .memory-panel.active {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        box-shadow: 0 0 40px var(--color-glow-magic), 0 0 100px rgba(0, 0, 0, 1);
+        border: 3px solid var(--color-primary);
+      }
+      .image-container {
+        overflow: hidden;
+        border-radius: 25px;
+        margin-bottom: 35px;
+        border: 6px solid var(--color-primary);
+        box-shadow: 0 0 30px var(--color-glow-gold);
+      }
+      .memory-panel img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.8s ease-out;
+      }
+      .memory-panel img:hover {
+        transform: scale(1.1) rotate(0.5deg);
+      }
+      .next-memory {
+        margin-top: 40px;
+        padding: 15px 35px;
+        font-size: 1.2rem;
+        background: linear-gradient(90deg, #1e90ff, #00bfff);
+        color: #fff;
+        border: 3px solid var(--color-glow-magic);
+        border-radius: 15px;
+        cursor: pointer;
+        box-shadow: 0 6px 20px rgba(30, 144, 255, 0.8);
+        transition: all 0.4s;
+        text-transform: uppercase;
+      }
+      .next-memory:hover {
+        background: linear-gradient(90deg, #00bfff, #1e90ff);
+        box-shadow: 0 6px 30px var(--color-glow-magic);
+        transform: translateY(-4px) scale(1.02);
+      }
+
+      /* Panel 3: Closing & Primogem/Snitch */
+      #panel3 {
+        background: linear-gradient(135deg, #00004d, #1a0033);
+        background-blend-mode: color-burn;
+        background-image: radial-gradient(
+            circle at 70% 30%,
+            rgba(255, 255, 255, 0.1) 5%,
+            transparent 60%
+          ),
+          radial-gradient(
+            circle at 30% 80%,
+            rgba(30, 144, 255, 0.3) 10%,
+            transparent 80%
+          ),
+          linear-gradient(135deg, #00004d, #1a0033);
+        min-height: 90vh;
+      }
+      .primogem {
+        font-size: 6rem;
+        line-height: 1;
+        margin-bottom: 40px;
+        color: var(--color-primary);
+        text-shadow: 0 0 20px var(--color-glow-gold), 0 0 40px #ffd700;
+        animation: pulse 1.2s infinite alternate;
+      }
+      @keyframes pulse {
+        from {
+          transform: scale(1);
+          text-shadow: 0 0 20px var(--color-glow-gold);
+        }
+        to {
+          transform: scale(1.2);
+          text-shadow: 0 0 40px var(--color-glow-gold), 0 0 60px #fff;
+        }
+      }
+      @keyframes titleGlow {
+        from {
+          text-shadow: 0 0 30px var(--color-glow-gold),
+            0 0 10px rgba(255, 255, 255, 1);
+        }
+        to {
+          text-shadow: 0 0 35px var(--color-glow-gold),
+            0 0 15px rgba(255, 255, 255, 1);
+        }
+      }
+
+      #restartBtn {
+        padding: 18px 40px;
+        font-size: 1.2rem;
+        background: linear-gradient(90deg, #ff9a9e, #fecfef);
+        color: #333;
+        box-shadow: 0 8px 25px rgba(255, 154, 158, 1);
+        border-radius: 50px;
+        transition: transform 0.3s;
+      }
+      #restartBtn:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(255, 154, 158, 1.2);
+      }
+
+      @media (max-width: 768px) {
+        .panel h1 {
+          font-size: 3.5rem;
+          letter-spacing: 1px;
+        }
+        .panel h2 {
+          font-size: 2.2rem;
+        }
+        .panel#panel1 p {
+          font-size: 1.7rem;
+        }
+        .buttons {
+          width: 90%;
+          height: 120px;
+        }
+        #yesBtn {
+          position: static;
+          transform: none;
+          margin-bottom: 20px;
+          width: 80%;
+        }
+        #noBtn {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          width: 40%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <audio id="bgMusic" loop>
+      <source src="your-genshin-or-harry-potter-music.mp3" type="audio/mp3" />
+      Your browser does not support the audio element.
+    </audio>
+
+    <div class="panel" id="panel1">
+       
+      <h1>Happy Girlfriend Day Zaza! 💖</h1>
+       
+      <p>
+        Beli siomay di rumah Bayu,<br />
+        Bismillah *someday* berumah tangga *with you* 🥰
+      </p>
+      <p
+        style="
+          font-size: 1.2rem;
+          font-weight: 400;
+          font-style: normal;
+          opacity: 0.9;
+        "
+      >
+        Traveler, kamu siap untuk memulai Quest Ajaib ini?
+      </p>
+       
+      <div class="buttons">
+            <button id="yesBtn">Yes, My Traveler! ✨</button>    
+        <button id="noBtn">No, Gak Mau Ah 😢</button>  
+      </div>
+      <div id="noAlert" class="message-box hidden">
+        Waspadalah! Mantra Anti-Sentuh aktif! Pilih yang BENAR!
+      </div>
+    </div>
+
+    <div class="memory-panel-container">
+      <div class="memory-panel" id="memory1">
+         
+        <h2>Memori 1: Cosplay Luffy & Robin di Roblox 🏴‍☠️</h2>
+        <div class="image-container">
+           
+          <img
+            src="https://i.imgur.com/hTOgAXx.png"
+            alt="Roblox Cosplay Luffy & Robin"
+          />
+        </div>
+         
+        <p>
+          Kita *ngakak* banget waktu *cosplay* ini! *Gak kerasa* waktu *main*
+          bareng kamu. Kamu itu *mood booster* dan *navigator* terbaik aku di
+          semua *game*. *Thank you* ya, *sayang*.
+        </p>
+        <button class="next-memory" data-next="memory2">
+          Lanjut ke Memori 2 ➡️
+        </button>
+      </div>
+
+      <div class="memory-panel" id="memory2">
+         
+        <h2>Memori 2: Waktu Mancing Santai Berdua 🎣</h2>
+        <div class="image-container">
+            <img src="https://i.imgur.com/HjP0b66.png" alt="Mancing" />
+        </div>
+         
+        <p>
+          Matahari boleh bersinar terik,<br />tapi tetap kamu yang paling
+          menarik. Momen *chill* gini sama kamu itu *priceless*, *healing*
+          banget dari *stress* dunia nyata. 💖
+        </p>
+        <button class="next-memory" data-next="memory3">
+          Lanjut ke Memori 3 ➡️
+        </button>
+      </div>
+
+      <div class="memory-panel" id="memory3">
+         
+        <h2>Memori 3: First Time Mabar Genshin Impact ⚡</h2>
+        <div class="image-container">
+           
+          <img
+            src="https://i.imgur.com/gxg0Y8l.png"
+            alt="First Time Mabar Genshin"
+          />
+        </div>
+         
+        <p>
+          Tahu gak semen apa yang bikin aku bahagia? Semenjak kenal kamu. *First
+          time mabar* Genshin sama kamu itu *epic* banget! *You're my best co-op
+          partner, always*.
+        </p>
+        <button class="next-memory" data-next="memory4">
+          Lanjut ke *Foto Favorit* Baru! 😍
+        </button>
+      </div>
+
+      <div class="memory-panel" id="memory4">
+         
+        <h2>Memori 4: My New Favorite View of You! ✨</h2>
+        <div class="image-container">
+           
+          <img src="https://i.imgur.com/xyb2tRq.png" alt="Foto Favorit Zaza" />
+        </div>
+         
+        <p
+          style="
+            font-size: 1.8rem;
+            font-style: italic;
+            color: #ff99ff;
+            text-shadow: 0 0 10px #ff99ff;
+          "
+        >
+          Btw, **this is my new fav pic from u huhuhu i love it** 🥺<br />
+          *Kamu cantik banget di sini, Sayang. Selalu.*
+        </p>
+        <button class="next-memory" data-next="panel3">
+          Lihat Hadiah Spesial Terakhir! 💎
+        </button>
+      </div>
+    </div>
+    <div class="panel" id="panel3">
+      <div class="primogem">💎</div>
+       
+      <h2>A Token of My Affection 🎁</h2>
+       
+      <p style="font-size: 1.5rem; font-style: normal; font-weight: 500">
+        Semua *effort* ini aku buat, karena...<br />
+        Aku Jerman, kamu Perancis,<br />
+        Aku perhatikan kamu makin manis!
+      </p>
+      <p style="font-size: 1.4rem; margin-top: 30px; font-weight: 400">
+        *Sayang*, terima kasih sudah jadi *support system* terbaik, teman
+        *mabar*, dan alasan aku senyum.
+      </p>
+       
+      <p class="quote">I love you 3000. Happy Girlfriend Day!</p>
+        <button id="restartBtn">Mulai Petualangan Lagi! 🎮</button>
+      <p
+        style="
+          font-size: 1.1rem;
+          margin-top: 25px;
+          opacity: 0.5;
+          font-weight: 300;
+        "
+      >
+        — From your Traveler, [Darren lim lim lim ] with all the hearts —
+      </p>
+    </div>
+
+    <script>
+      const yesBtn = document.getElementById('yesBtn');
+      const noBtn = document.getElementById('noBtn');
+      const noAlert = document.getElementById('noAlert');
+      const restartBtn = document.getElementById('restartBtn');
+      const memoryPanels = document.querySelectorAll('.memory-panel');
+      const nextMemoryButtons = document.querySelectorAll('.next-memory');
+      const panel1 = document.getElementById('panel1');
+      const bgMusic = document.getElementById('bgMusic');
+
+      // Daftar pesan yang muncul saat tombol NO diklik/ditekan
+      const noInteractionMessages = [
+        'Yee Gak Kena! 😝',
+        'No? Gak Dulu! 😉',
+        'Gak Bisa Di-klik! 🚫',
+        'Coba Lagi Deh! 😂',
+        'Mantra Melindungi! ✨',
+        'Not Today! 🏃‍♀️',
+        'Salah Pencet Tuh! 🙈',
+      ];
+
+      let noClickCount = 0; // Counter untuk melacak interaksi
+
+      function startAdventure() {
+        bgMusic.play().catch((e) => console.log('Music play failed:', e));
+        document
+          .getElementById('memory1')
+          .scrollIntoView({ behavior: 'smooth' });
+        document.getElementById('memory1').classList.add('active');
+        noAlert.classList.add('hidden');
+        yesBtn.removeEventListener('click', startAdventure);
+      }
+
+      // 1. Logika Tombol YA: Start Music & Scroll
+      yesBtn.addEventListener('click', startAdventure);
+
+      // 2. Logika Tombol NO: KABUR-KABURAN (ON MOUSEOVER)
+      const noAlertMessages = [
+        'Waspadalah! Mantra Anti-Sentuh aktif! Pilih yang BENAR!',
+        "Paimon bilang 'Emergency Food' kalau kamu pilih No. Pilih YES! ❤️",
+        'Mantra Protego Diaktifkan! Tidak bisa diklik!',
+        'Petualang yang baik tidak memilih jalan buntu. Pilih YES!',
+        'Sistem Mendeteksi Pilihan Tidak Sah. Coba Lagi!',
+      ];
+      noBtn.addEventListener('mouseover', () => {
+        // Tombol NO dibuat kabur dan bergerak acak (pertahankan)
+        const parentRect = panel1.getBoundingClientRect();
+        const maxX = parentRect.width * 0.3;
+        const maxY = parentRect.height * 0.3;
+        const randomX = (Math.random() - 0.5) * maxX;
+        const randomY = (Math.random() - 0.5) * maxY;
+
+        const newLeft = 50 + (randomX / parentRect.width) * 100;
+        const newTop = 50 + (randomY / parentRect.height) * 100;
+
+        noBtn.style.left = `${newLeft}%`;
+        noBtn.style.top = `${newTop}%`;
+        noBtn.style.transform = `translate(-50%, -50%)`;
+
+        // Tampilkan pesan ejekan saat kursor mendekat
+        const randomIndex = Math.floor(Math.random() * noAlertMessages.length);
+        noAlert.textContent = noAlertMessages[randomIndex];
+        noAlert.classList.remove('hidden');
+      });
+
+      // 3. Logika Tombol NO: GANTI TULISAN (ON CLICK)
+      noBtn.addEventListener('click', (e) => {
+        e.preventDefault(); // Mencegah form/page action default (walaupun tidak ada)
+
+        // Ambil pesan acak dari daftar
+        const randomIndex = Math.floor(
+          Math.random() * noInteractionMessages.length
+        );
+        const randomMessage = noInteractionMessages[randomIndex];
+
+        // Ganti teks tombol
+        noBtn.textContent = randomMessage;
+
+        // Kembalikan teks ke "No, Gak Mau Ah 😢" setelah jeda (misalnya 500ms)
+        setTimeout(() => {
+          noBtn.textContent = 'No, Gak Mau Ah 😢';
+        }, 500);
+
+        // Tampilkan pesan alert di bawah (opsional, bisa diganti dengan pesan ejekan yang sama)
+        noAlert.textContent = `Skill Blocked! Coba Lagi!`;
+        noAlert.classList.remove('hidden');
+      });
+
+      // 4. Logika Next Memory Button: Pindah ke Panel Berikutnya
+      nextMemoryButtons.forEach((button) => {
+        button.addEventListener('click', (e) => {
+          const nextId = e.target.getAttribute('data-next');
+          const nextElement = document.getElementById(nextId);
+          if (nextElement) {
+            nextElement.scrollIntoView({ behavior: 'smooth' });
+            if (nextElement.classList.contains('memory-panel')) {
+              nextElement.classList.add('active');
+            }
+          }
+        });
+      });
+
+      // 5. Memory panels fade-in saat scroll
+      window.addEventListener('scroll', () => {
+        memoryPanels.forEach((panel) => {
+          const rect = panel.getBoundingClientRect();
+          if (rect.top < window.innerHeight * 0.7) {
+            panel.classList.add('active');
+          }
+        });
+      });
+
+      // 6. Restart button -> scroll ke panel 1 dan hentikan musik
+      restartBtn.addEventListener('click', () => {
+        document
+          .getElementById('panel1')
+          .scrollIntoView({ behavior: 'smooth' });
+        memoryPanels.forEach((panel) => panel.classList.remove('active'));
+        bgMusic.pause();
+        bgMusic.currentTime = 0;
+      });
+    </script>
+  </body>
 </html>
