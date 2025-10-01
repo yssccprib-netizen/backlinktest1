@@ -5,11 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Happy Girlfriend Day Zaza 💖</title>
     <link
+      rel="preload"
       href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Poppins:wght@300;400;600;800&display=swap"
-      rel="stylesheet"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Poppins:wght@300;400;600;800&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
+
     <style>
-      /* --- CSS FINAL: TEMA GENSHIN X HOGWARTS V4 (MAGIC & ELEGANCE) --- */
+      /* --- CSS FINAL V5: OPTIMASI MOBILE & SMOOTHNESS --- */
 
       :root {
         --color-primary: #ffc72c; /* Emas Hogwarts */
@@ -18,13 +27,14 @@
         --color-text-light: #f0f8ff;
         --color-glow-gold: rgba(255, 220, 100, 1);
         --color-glow-magic: rgba(30, 144, 255, 0.7); /* Biru Ajaib */
+        --transition-slow: 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       }
 
       html {
         scroll-behavior: smooth;
       }
 
-      /* BACKGROUND LAYER 1: Deep Magic Night */
+      /* Base: Optimized for Mobile Performance */
       body {
         margin: 0;
         padding: 0;
@@ -34,10 +44,11 @@
         color: var(--color-text-light);
         min-height: 450vh;
         position: relative;
+        /* Menggunakan warna solid untuk background utama */
         background-image: linear-gradient(135deg, #020010 0%, #000033 100%);
       }
 
-      /* BACKGROUND LAYER 2: Animated Stars/Magic Dust */
+      /* BACKGROUND LAYER 2: Animated Stars/Magic Dust (Optimized for smoother motion) */
       body::before {
         content: '';
         position: fixed;
@@ -47,16 +58,18 @@
         height: 100%;
         z-index: -1;
         background-image: radial-gradient(
-            var(--color-glow-gold) 1px,
+            var(--color-glow-gold) 0.8px,
             transparent 30px
           ),
-          radial-gradient(var(--color-glow-magic) 0.5px, transparent 20px);
+          radial-gradient(var(--color-glow-magic) 0.4px, transparent 20px);
         background-size: 300px 300px, 150px 150px;
-        animation: starScroll 120s linear infinite;
+        /* Ganti 'linear' dengan 'ease-out' dan perkecil durasi sedikit */
+        animation: starScroll 90s linear infinite;
         opacity: 0.6;
       }
 
       @keyframes starScroll {
+        /* Menggunakan 'transform' untuk pergerakan lebih halus dan FPS lebih tinggi */
         from {
           background-position: 0 0, 40px 60px;
         }
@@ -72,219 +85,224 @@
         justify-content: center;
         align-items: center;
         text-align: center;
-        padding: 50px 20px;
+        padding: 80px 20px; /* Padding lebih banyak untuk mobile */
         flex-direction: column;
         position: relative;
         z-index: 2;
-        background-attachment: fixed;
+        /* Hapus background-attachment: fixed karena membebani mobile */
       }
 
       /* JUDUL GENSIN X HOGWARTS */
       .panel h1 {
         font-family: 'Cinzel', serif;
-        font-size: 5rem;
+        font-size: 3.5rem; /* Ukuran awal lebih kecil untuk mobile */
         color: var(--color-primary);
         margin-bottom: 25px;
-        text-shadow: 0 0 30px var(--color-glow-gold),
-          0 0 10px rgba(255, 255, 255, 1);
+        text-shadow: 0 0 20px var(--color-glow-gold),
+          0 0 8px rgba(255, 255, 255, 0.8);
         font-weight: 900;
         line-height: 1.1;
-        letter-spacing: 3px;
+        letter-spacing: 2px;
         animation: titleGlow 2.5s infinite alternate;
         background: linear-gradient(180deg, #fff 30%, var(--color-primary) 70%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+        max-width: 100%;
       }
       .panel h2 {
         font-family: 'Cinzel', serif;
-        font-size: 3.2rem;
+        font-size: 2.5rem; /* Ukuran awal lebih kecil untuk mobile */
         color: #a0c4ff;
         margin-bottom: 20px;
-        text-shadow: 0 0 15px var(--color-glow-magic),
+        text-shadow: 0 0 10px var(--color-glow-magic),
           0 0 5px rgba(255, 255, 255, 0.5);
         font-weight: 700;
+        max-width: 100%;
       }
       .panel p {
-        font-size: 1.5rem;
-        line-height: 1.8;
-        margin: 10px auto 40px;
+        font-size: 1.2rem; /* Ukuran awal lebih kecil untuk mobile */
+        line-height: 1.7;
+        margin: 10px auto 30px;
         color: var(--color-text-light);
         text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
-        max-width: 750px;
+        max-width: 90%; /* Responsif */
       }
       .panel#panel1 p {
         font-family: 'Poppins', sans-serif;
-        font-size: 2rem;
+        font-size: 1.8rem; /* Lebih besar untuk bagian pantun */
         font-style: italic;
         font-weight: 700;
-        line-height: 1.6;
+        line-height: 1.5;
         color: #ffcccc;
-        text-shadow: 0 0 20px rgba(255, 150, 200, 1),
-          0 0 8px rgba(255, 255, 255, 0.8);
+        text-shadow: 0 0 15px rgba(255, 150, 200, 1),
+          0 0 6px rgba(255, 255, 255, 0.8);
       }
 
-      /* Tombol Puzzle */
+      /* Tombol Puzzle (Revisi Total untuk Mobile) */
       .buttons {
-        margin-top: 60px;
+        margin-top: 40px;
         position: relative;
-        width: 550px;
-        height: 100px;
+        width: 100%; /* Lebar penuh di mobile */
+        max-width: 400px;
+        min-height: 120px; /* Tinggi minimum */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
       }
       button {
-        padding: 20px 50px;
-        font-size: 1.4rem;
+        padding: 15px 30px; /* Padding lebih kecil */
+        font-size: 1.2rem; /* Ukuran font lebih kecil */
         border: none;
         border-radius: 50px;
         cursor: pointer;
-        position: absolute;
+        position: absolute; /* Tetap absolute untuk permainan 'NoBtn' */
         font-weight: 700;
         text-transform: uppercase;
-        letter-spacing: 2px;
+        letter-spacing: 1px;
+        width: 80%; /* Lebar responsif */
+        max-width: 300px;
+        margin: 10px 0;
       }
       #yesBtn {
         background: linear-gradient(90deg, #ffd700, #ff8c00);
         color: var(--color-secondary);
+        /* Posisi default di tengah */
+        top: 0;
         left: 50%;
         transform: translateX(-50%);
-        box-shadow: 0 0 30px var(--color-glow-gold), 0 0 10px #fff;
+        box-shadow: 0 0 20px var(--color-glow-gold), 0 0 8px #fff;
         z-index: 10;
-        border: 3px solid #fff;
-        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        border: 2px solid #fff;
+        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       }
       #yesBtn:hover {
-        transform: translateX(-50%) scale(1.1);
-        box-shadow: 0 0 50px var(--color-glow-gold), 0 0 20px #fff;
+        transform: translateX(-50%) scale(1.05); /* Skala lebih kecil di mobile */
+        box-shadow: 0 0 40px var(--color-glow-gold), 0 0 15px #fff;
       }
       #noBtn {
         background: linear-gradient(90deg, #800000, #ff6347);
         color: #fff;
-        left: 10%;
-        top: 0;
-        transition: all 0.05s linear; /* Transisi super cepat */
+        /* Posisi awal di bawah Yes */
+        top: 70px;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: all 0.05s linear;
         z-index: 5;
-        box-shadow: 0 0 20px rgba(255, 99, 71, 0.8);
+        box-shadow: 0 0 15px rgba(255, 99, 71, 0.8);
       }
       .message-box {
         margin-top: 50px;
-        padding: 30px 60px;
+        padding: 20px 30px;
         background: rgba(255, 50, 50, 0.1);
-        border-radius: 25px;
-        backdrop-filter: blur(20px);
-        box-shadow: 0 0 30px rgba(255, 50, 50, 1),
-          inset 0 0 15px rgba(255, 150, 150, 0.7);
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 0 20px rgba(255, 50, 50, 1),
+          inset 0 0 10px rgba(255, 150, 150, 0.7);
         display: none;
         font-weight: 800;
+        font-size: 1rem;
         color: #ff9999;
-        border: 2px solid #ff3333;
+        border: 1px solid #ff3333;
+        max-width: 90%;
+        animation: fadeIn 0.3s ease-out;
+      }
+      .message-box:not(.hidden) {
+        display: block;
       }
 
       /* Memory Panels (ARTIFACT CARD & Wizard Frame) */
       .memory-panel-container {
         width: 100%;
-        max-width: 1100px;
-        margin: 120px auto;
-        padding: 30px;
+        max-width: 900px; /* Lebar maksimum disesuaikan */
+        margin: 80px auto; /* Margin disesuaikan */
+        padding: 0 15px; /* Padding untuk responsif */
         z-index: 1;
       }
       .memory-panel {
-        min-height: 80vh;
-        background: rgba(0, 0, 50, 0.9);
-        margin: 100px 0;
-        border-radius: 30px;
-        padding: 60px;
-        box-shadow: 0 0 80px rgba(0, 0, 0, 1);
+        min-height: 70vh;
+        background: rgba(0, 0, 50, 0.95);
+        margin: 80px 0;
+        border-radius: 20px; /* Radius lebih kecil di mobile */
+        padding: 40px 25px; /* Padding lebih kecil */
+        box-shadow: 0 0 60px rgba(0, 0, 0, 1);
         opacity: 0;
-        transform: translateY(200px) scale(0.9);
-        transition: all 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        backdrop-filter: blur(20px);
-        border: 3px solid var(--color-primary);
+        transform: translateY(100px); /* Pergerakan lebih kecil untuk optimasi */
+        transition: opacity 1s, transform 1s; /* Transisi dipisah */
+        backdrop-filter: blur(15px);
+        border: 2px solid var(--color-primary);
         position: relative;
+        text-align: center;
       }
       .memory-panel::before {
-        content: '';
-        position: absolute;
-        top: -5px;
-        left: -5px;
-        right: -5px;
-        bottom: -5px;
-        border: 5px solid rgba(30, 144, 255, 0.3);
-        border-radius: 35px;
-        pointer-events: none;
+        /* Efek Border Ganda */
+        top: -3px;
+        left: -3px;
+        right: -3px;
+        bottom: -3px;
+        border: 4px solid rgba(30, 144, 255, 0.3);
+        border-radius: 25px;
       }
       .memory-panel.active {
         opacity: 1;
-        transform: translateY(0) scale(1);
-        box-shadow: 0 0 40px var(--color-glow-magic), 0 0 100px rgba(0, 0, 0, 1);
-        border: 3px solid var(--color-primary);
+        transform: translateY(0);
+        box-shadow: 0 0 30px var(--color-glow-magic), 0 0 80px rgba(0, 0, 0, 1);
       }
       .image-container {
         overflow: hidden;
-        border-radius: 25px;
-        margin-bottom: 35px;
-        border: 6px solid var(--color-primary);
-        box-shadow: 0 0 30px var(--color-glow-gold);
+        border-radius: 15px;
+        margin-bottom: 30px;
+        border: 4px solid var(--color-primary);
+        box-shadow: 0 0 20px var(--color-glow-gold);
+        max-width: 100%;
       }
       .memory-panel img {
         width: 100%;
         height: auto;
         display: block;
-        transition: transform 0.8s ease-out;
+        transition: transform 0.6s ease-out;
+        object-fit: cover;
       }
       .memory-panel img:hover {
-        transform: scale(1.1) rotate(0.5deg);
+        transform: scale(1.05); /* Skala lebih kecil di mobile */
       }
       .next-memory {
-        margin-top: 40px;
-        padding: 15px 35px;
-        font-size: 1.2rem;
-        background: linear-gradient(90deg, #1e90ff, #00bfff);
-        color: #fff;
-        border: 3px solid var(--color-glow-magic);
-        border-radius: 15px;
-        cursor: pointer;
-        box-shadow: 0 6px 20px rgba(30, 144, 255, 0.8);
-        transition: all 0.4s;
-        text-transform: uppercase;
-      }
-      .next-memory:hover {
-        background: linear-gradient(90deg, #00bfff, #1e90ff);
-        box-shadow: 0 6px 30px var(--color-glow-magic);
-        transform: translateY(-4px) scale(1.02);
+        margin-top: 30px;
+        padding: 12px 25px;
+        font-size: 1rem;
+        border-radius: 10px;
+        border: 2px solid var(--color-glow-magic);
+        box-shadow: 0 4px 15px rgba(30, 144, 255, 0.8);
       }
 
       /* Panel 3: Closing & Primogem/Snitch */
       #panel3 {
-        background: linear-gradient(135deg, #00004d, #1a0033);
-        background-blend-mode: color-burn;
-        background-image: radial-gradient(
-            circle at 70% 30%,
-            rgba(255, 255, 255, 0.1) 5%,
-            transparent 60%
-          ),
-          radial-gradient(
-            circle at 30% 80%,
-            rgba(30, 144, 255, 0.3) 10%,
-            transparent 80%
-          ),
-          linear-gradient(135deg, #00004d, #1a0033);
-        min-height: 90vh;
+        /* Hapus background layer yang berat, pertahankan gradient dan fokus pada konten */
+        background-image: linear-gradient(135deg, #00004d, #1a0033);
+        min-height: 80vh;
       }
       .primogem {
-        font-size: 6rem;
-        line-height: 1;
-        margin-bottom: 40px;
-        color: var(--color-primary);
-        text-shadow: 0 0 20px var(--color-glow-gold), 0 0 40px #ffd700;
-        animation: pulse 1.2s infinite alternate;
+        font-size: 5rem;
+        margin-bottom: 30px;
+        animation: pulse 1s infinite alternate;
+      }
+      .quote {
+        font-size: 1.8rem;
+        font-weight: 800;
+        margin: 50px auto 30px;
+        color: #ff9a9e;
+        text-shadow: 0 0 15px #ff9a9e;
+        animation: titleGlow 1.5s infinite alternate;
       }
       @keyframes pulse {
+        /* Animasi lebih halus */
         from {
           transform: scale(1);
-          text-shadow: 0 0 20px var(--color-glow-gold);
+          opacity: 0.8;
         }
         to {
-          transform: scale(1.2);
-          text-shadow: 0 0 40px var(--color-glow-gold), 0 0 60px #fff;
+          transform: scale(1.1);
+          opacity: 1;
         }
       }
       @keyframes titleGlow {
@@ -299,46 +317,51 @@
       }
 
       #restartBtn {
-        padding: 18px 40px;
-        font-size: 1.2rem;
-        background: linear-gradient(90deg, #ff9a9e, #fecfef);
-        color: #333;
-        box-shadow: 0 8px 25px rgba(255, 154, 158, 1);
-        border-radius: 50px;
-        transition: transform 0.3s;
-      }
-      #restartBtn:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 30px rgba(255, 154, 158, 1.2);
+        padding: 15px 35px;
+        font-size: 1.1rem;
       }
 
-      @media (max-width: 768px) {
+      /* MEDIA QUERIES UNTUK DESKTOP */
+      @media (min-width: 769px) {
         .panel h1 {
-          font-size: 3.5rem;
-          letter-spacing: 1px;
+          font-size: 5rem; /* Ukuran asli untuk desktop */
+          letter-spacing: 3px;
         }
         .panel h2 {
-          font-size: 2.2rem;
+          font-size: 3.2rem;
+        }
+        .panel p {
+          font-size: 1.5rem;
         }
         .panel#panel1 p {
-          font-size: 1.7rem;
+          font-size: 2.2rem;
         }
         .buttons {
-          width: 90%;
-          height: 120px;
+          width: 550px;
+          min-height: 100px;
+          flex-direction: row; /* Kembali ke tata letak horizontal di desktop */
+        }
+        button {
+          padding: 20px 50px;
+          font-size: 1.4rem;
+          width: auto;
+          max-width: none;
         }
         #yesBtn {
-          position: static;
-          transform: none;
-          margin-bottom: 20px;
-          width: 80%;
+          left: 50%;
+          top: 0;
         }
         #noBtn {
-          position: absolute;
-          left: 50%;
-          top: 50%;
-          transform: translate(-50%, -50%);
-          width: 40%;
+          left: 10%; /* Posisi kabur default */
+          top: 0;
+        }
+        .memory-panel {
+          padding: 60px;
+          border-radius: 30px;
+        }
+        .next-memory {
+          padding: 15px 35px;
+          font-size: 1.2rem;
         }
       }
     </style>
@@ -350,12 +373,11 @@
     </audio>
 
     <div class="panel" id="panel1">
-       
       <h1>Happy Girlfriend Day Zaza! 💖</h1>
-       
+
       <p>
         Beli siomay di rumah Bayu,<br />
-        Bismillah *someday* berumah tangga *with you* 🥰
+        Bismillah **someday** berumah tangga **with you** 🥰
       </p>
       <p
         style="
@@ -365,12 +387,12 @@
           opacity: 0.9;
         "
       >
-        Traveler, kamu siap untuk memulai Quest Ajaib ini?
+        Traveler, kamu siap untuk memulai **Quest Ajaib** ini?
       </p>
-       
+
       <div class="buttons">
-            <button id="yesBtn">Yes, My Traveler! ✨</button>    
-        <button id="noBtn">No, Gak Mau Ah 😢</button>  
+        <button id="yesBtn">Yes, My Traveler! ✨</button>
+        <button id="noBtn">No, Gak Mau Ah 😢</button>
       </div>
       <div id="noAlert" class="message-box hidden">
         Waspadalah! Mantra Anti-Sentuh aktif! Pilih yang BENAR!
@@ -379,20 +401,18 @@
 
     <div class="memory-panel-container">
       <div class="memory-panel" id="memory1">
-         
         <h2>Memori 1: Cosplay Luffy & Robin di Roblox 🏴‍☠️</h2>
         <div class="image-container">
-           
           <img
             src="https://i.imgur.com/hTOgAXx.png"
             alt="Roblox Cosplay Luffy & Robin"
           />
         </div>
-         
+
         <p>
-          Kita *ngakak* banget waktu *cosplay* ini! *Gak kerasa* waktu *main*
-          bareng kamu. Kamu itu *mood booster* dan *navigator* terbaik aku di
-          semua *game*. *Thank you* ya, *sayang*.
+          Kita **ngakak** banget waktu **cosplay** ini! **Gak kerasa** waktu
+          **main** bareng kamu. Kamu itu **mood booster** dan **navigator**
+          terbaik aku di semua **game**. **Thank you** ya, **sayang**.
         </p>
         <button class="next-memory" data-next="memory2">
           Lanjut ke Memori 2 ➡️
@@ -400,16 +420,15 @@
       </div>
 
       <div class="memory-panel" id="memory2">
-         
         <h2>Memori 2: Waktu Mancing Santai Berdua 🎣</h2>
         <div class="image-container">
-            <img src="https://i.imgur.com/HjP0b66.png" alt="Mancing" />
+          <img src="https://i.imgur.com/HjP0b66.png" alt="Mancing" />
         </div>
-         
+
         <p>
           Matahari boleh bersinar terik,<br />tapi tetap kamu yang paling
-          menarik. Momen *chill* gini sama kamu itu *priceless*, *healing*
-          banget dari *stress* dunia nyata. 💖
+          menarik. Momen **chill** gini sama kamu itu **priceless**, **healing**
+          banget dari **stress** dunia nyata. 💖
         </p>
         <button class="next-memory" data-next="memory3">
           Lanjut ke Memori 3 ➡️
@@ -417,37 +436,33 @@
       </div>
 
       <div class="memory-panel" id="memory3">
-         
         <h2>Memori 3: First Time Mabar Genshin Impact ⚡</h2>
         <div class="image-container">
-           
           <img
             src="https://i.imgur.com/gxg0Y8l.png"
             alt="First Time Mabar Genshin"
           />
         </div>
-         
+
         <p>
-          Tahu gak semen apa yang bikin aku bahagia? Semenjak kenal kamu. *First
-          time mabar* Genshin sama kamu itu *epic* banget! *You're my best co-op
-          partner, always*.
+          Tahu gak semen apa yang bikin aku bahagia? Semenjak kenal kamu. **First
+          time mabar** Genshin sama kamu itu **epic** banget! **You're my best
+          co-op partner, always**.
         </p>
         <button class="next-memory" data-next="memory4">
-          Lanjut ke *Foto Favorit* Baru! 😍
+          Lanjut ke **Foto Favorit** Baru! 😍
         </button>
       </div>
 
       <div class="memory-panel" id="memory4">
-         
         <h2>Memori 4: My New Favorite View of You! ✨</h2>
         <div class="image-container">
-           
           <img src="https://i.imgur.com/xyb2tRq.png" alt="Foto Favorit Zaza" />
         </div>
-         
+
         <p
           style="
-            font-size: 1.8rem;
+            font-size: 1.5rem; /* Disesuaikan untuk mobile */
             font-style: italic;
             color: #ff99ff;
             text-shadow: 0 0 10px #ff99ff;
@@ -463,30 +478,30 @@
     </div>
     <div class="panel" id="panel3">
       <div class="primogem">💎</div>
-       
+
       <h2>A Token of My Affection 🎁</h2>
-       
+
       <p style="font-size: 1.5rem; font-style: normal; font-weight: 500">
-        Semua *effort* ini aku buat, karena...<br />
+        Semua **effort** ini aku buat, karena...<br />
         Aku Jerman, kamu Perancis,<br />
         Aku perhatikan kamu makin manis!
       </p>
-      <p style="font-size: 1.4rem; margin-top: 30px; font-weight: 400">
-        *Sayang*, terima kasih sudah jadi *support system* terbaik, teman
-        *mabar*, dan alasan aku senyum.
+      <p style="font-size: 1.2rem; margin-top: 20px; font-weight: 400">
+        **Sayang**, terima kasih sudah jadi **support system** terbaik, teman
+        **mabar**, dan alasan aku senyum.
       </p>
-       
+
       <p class="quote">I love you 3000. Happy Girlfriend Day!</p>
-        <button id="restartBtn">Mulai Petualangan Lagi! 🎮</button>
+      <button id="restartBtn">Mulai Petualangan Lagi! 🎮</button>
       <p
         style="
-          font-size: 1.1rem;
+          font-size: 1rem;
           margin-top: 25px;
           opacity: 0.5;
           font-weight: 300;
         "
       >
-        — From your Traveler, [Darren lim lim lim ] with all the hearts —
+        — From your Traveler, **[Darren lim lim lim ]** with all the hearts —
       </p>
     </div>
 
@@ -500,7 +515,7 @@
       const panel1 = document.getElementById('panel1');
       const bgMusic = document.getElementById('bgMusic');
 
-      // Daftar pesan yang muncul saat tombol NO diklik/ditekan
+      // Daftar pesan ejekan yang lebih bervariasi
       const noInteractionMessages = [
         'Yee Gak Kena! 😝',
         'No? Gak Dulu! 😉',
@@ -509,57 +524,92 @@
         'Mantra Melindungi! ✨',
         'Not Today! 🏃‍♀️',
         'Salah Pencet Tuh! 🙈',
+        'Hehe, Salah Tombol! 🤪',
       ];
 
-      let noClickCount = 0; // Counter untuk melacak interaksi
-
-      function startAdventure() {
-        bgMusic.play().catch((e) => console.log('Music play failed:', e));
-        document
-          .getElementById('memory1')
-          .scrollIntoView({ behavior: 'smooth' });
-        document.getElementById('memory1').classList.add('active');
-        noAlert.classList.add('hidden');
-        yesBtn.removeEventListener('click', startAdventure);
-      }
-
-      // 1. Logika Tombol YA: Start Music & Scroll
-      yesBtn.addEventListener('click', startAdventure);
-
-      // 2. Logika Tombol NO: KABUR-KABURAN (ON MOUSEOVER)
+      // Daftar pesan alert untuk MouseOver
       const noAlertMessages = [
         'Waspadalah! Mantra Anti-Sentuh aktif! Pilih yang BENAR!',
         "Paimon bilang 'Emergency Food' kalau kamu pilih No. Pilih YES! ❤️",
         'Mantra Protego Diaktifkan! Tidak bisa diklik!',
         'Petualang yang baik tidak memilih jalan buntu. Pilih YES!',
         'Sistem Mendeteksi Pilihan Tidak Sah. Coba Lagi!',
+        "Kamu butuh Primogem? Pilih YES! 💎",
       ];
-      noBtn.addEventListener('mouseover', () => {
-        // Tombol NO dibuat kabur dan bergerak acak (pertahankan)
-        const parentRect = panel1.getBoundingClientRect();
-        const maxX = parentRect.width * 0.3;
-        const maxY = parentRect.height * 0.3;
-        const randomX = (Math.random() - 0.5) * maxX;
-        const randomY = (Math.random() - 0.5) * maxY;
 
-        const newLeft = 50 + (randomX / parentRect.width) * 100;
-        const newTop = 50 + (randomY / parentRect.height) * 100;
+      // Fungsi untuk memastikan musik dimainkan
+      function playMusic() {
+        // Coba mainkan musik, ini harus dipicu oleh interaksi user (klik)
+        bgMusic.play().catch((e) => {
+          console.log('Music play blocked (Autoplay):', e);
+          // Beri pesan ke user untuk mengklik layar (jika diperlukan)
+        });
+      }
 
-        noBtn.style.left = `${newLeft}%`;
-        noBtn.style.top = `${newTop}%`;
-        noBtn.style.transform = `translate(-50%, -50%)`;
+      function startAdventure() {
+        // Coba mainkan musik saat tombol Yes diklik (interaksi user)
+        playMusic();
 
-        // Tampilkan pesan ejekan saat kursor mendekat
-        const randomIndex = Math.floor(Math.random() * noAlertMessages.length);
-        noAlert.textContent = noAlertMessages[randomIndex];
-        noAlert.classList.remove('hidden');
-      });
+        // Scroll ke memory1
+        const memory1 = document.getElementById('memory1');
+        memory1.scrollIntoView({ behavior: 'smooth' });
+        memory1.classList.add('active'); // Langsung aktifkan memory 1
+        noAlert.classList.add('hidden');
+        yesBtn.removeEventListener('click', startAdventure);
+      }
+
+      // 1. Logika Tombol YA: Start Music & Scroll
+      yesBtn.addEventListener('click', startAdventure);
+      // Tambahkan event listener global untuk mobile autoplay bypass
+      document.addEventListener('touchstart', playMusic, { once: true });
+      document.addEventListener('click', playMusic, { once: true });
+
+
+      // 2. Logika Tombol NO: KABUR-KABURAN (ON MOUSEOVER / TOUCH)
+      const moveNoButton = () => {
+        // Hanya jalankan jika viewport lebar (desktop) untuk menjaga kompatibilitas mobile
+        if (window.innerWidth >= 769) {
+          const parentRect = panel1.querySelector('.buttons').getBoundingClientRect();
+          const btnRect = noBtn.getBoundingClientRect();
+
+          // Hitung batas pergerakan
+          const maxX = parentRect.width - btnRect.width;
+          const maxY = parentRect.height - btnRect.height;
+          
+          // Posisi acak relatif terhadap parent (div.buttons)
+          const randomX = Math.random() * maxX;
+          const randomY = Math.random() * maxY;
+
+          // Set posisi menggunakan top/left relatif
+          noBtn.style.position = 'absolute';
+          noBtn.style.left = `${randomX}px`;
+          noBtn.style.top = `${randomY}px`;
+          noBtn.style.transform = `none`; // Reset transform karena kita menggunakan top/left
+
+          // Tampilkan pesan ejekan saat kursor mendekat
+          const randomIndex = Math.floor(
+            Math.random() * noAlertMessages.length
+          );
+          noAlert.textContent = noAlertMessages[randomIndex];
+          noAlert.classList.remove('hidden');
+        } else {
+            // Logika sederhana untuk mobile (hanya ganti pesan)
+            noBtn.style.transform = `translateX(-50%) scale(0.9)`;
+            setTimeout(() => {
+                noBtn.style.transform = `translateX(-50%) scale(1)`;
+            }, 100);
+        }
+      };
+      
+      // Tambahkan event untuk desktop dan mobile
+      noBtn.addEventListener('mouseover', moveNoButton);
+      noBtn.addEventListener('touchstart', moveNoButton); // Tambah touchstart untuk mobile
+
 
       // 3. Logika Tombol NO: GANTI TULISAN (ON CLICK)
       noBtn.addEventListener('click', (e) => {
-        e.preventDefault(); // Mencegah form/page action default (walaupun tidak ada)
+        e.preventDefault();
 
-        // Ambil pesan acak dari daftar
         const randomIndex = Math.floor(
           Math.random() * noInteractionMessages.length
         );
@@ -568,14 +618,15 @@
         // Ganti teks tombol
         noBtn.textContent = randomMessage;
 
-        // Kembalikan teks ke "No, Gak Mau Ah 😢" setelah jeda (misalnya 500ms)
-        setTimeout(() => {
-          noBtn.textContent = 'No, Gak Mau Ah 😢';
-        }, 500);
-
-        // Tampilkan pesan alert di bawah (opsional, bisa diganti dengan pesan ejekan yang sama)
+        // Tampilkan pesan alert
         noAlert.textContent = `Skill Blocked! Coba Lagi!`;
         noAlert.classList.remove('hidden');
+
+        // Kembalikan teks ke "No, Gak Mau Ah 😢" setelah jeda
+        setTimeout(() => {
+          noBtn.textContent = 'No, Gak Mau Ah 😢';
+          noAlert.classList.add('hidden'); // Sembunyikan pesan alert juga
+        }, 800);
       });
 
       // 4. Logika Next Memory Button: Pindah ke Panel Berikutnya
@@ -585,21 +636,35 @@
           const nextElement = document.getElementById(nextId);
           if (nextElement) {
             nextElement.scrollIntoView({ behavior: 'smooth' });
-            if (nextElement.classList.contains('memory-panel')) {
-              nextElement.classList.add('active');
-            }
+            // Beri sedikit jeda agar animasi scroll selesai sebelum menambah class active
+            setTimeout(() => {
+                if (nextElement.classList.contains('memory-panel')) {
+                    nextElement.classList.add('active');
+                }
+            }, 800); // Jeda 800ms
           }
         });
       });
 
-      // 5. Memory panels fade-in saat scroll
-      window.addEventListener('scroll', () => {
-        memoryPanels.forEach((panel) => {
-          const rect = panel.getBoundingClientRect();
-          if (rect.top < window.innerHeight * 0.7) {
-            panel.classList.add('active');
-          }
-        });
+      // 5. Memory panels fade-in saat scroll (Mempertahankan)
+      // Gunakan Intersection Observer untuk performa yang lebih baik daripada event scroll
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('active');
+              observer.unobserve(entry.target); // Berhenti mengamati setelah muncul
+            }
+          });
+        },
+        {
+          rootMargin: '0px',
+          threshold: 0.3, // Panel akan aktif saat 30% terlihat
+        }
+      );
+
+      memoryPanels.forEach((panel) => {
+        observer.observe(panel);
       });
 
       // 6. Restart button -> scroll ke panel 1 dan hentikan musik
@@ -607,9 +672,12 @@
         document
           .getElementById('panel1')
           .scrollIntoView({ behavior: 'smooth' });
+        // Hapus semua class active pada memory panels
         memoryPanels.forEach((panel) => panel.classList.remove('active'));
         bgMusic.pause();
         bgMusic.currentTime = 0;
+        // Setelah restart, tambahkan kembali event listener Yes Button
+        yesBtn.addEventListener('click', startAdventure);
       });
     </script>
   </body>
